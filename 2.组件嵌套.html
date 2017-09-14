@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			
+		</div>
+	</body>
+</html>
+<script src="bower_components/react/react.js" type="text/javascript" charset="utf-8"></script>
+<script src="bower_components/react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+<script type="text/babel">
+	var MessageBox=React.createClass({
+		render:function(){
+			//
+			var Submessages= [];
+			for(var i=0;i<10;i++){
+				Submessages.push(
+					<Submessage key={i} />
+				)
+			}
+			
+			return (
+				<div>
+					<h1>你好全世界,Hello Word</h1>
+					{Submessages}
+				</div>
+			)
+		}
+	})
+	
+	var Submessage=React.createClass({
+		render:function(){
+			return (
+				<div>
+					<h3>写代码很有意思</h3>
+					<Footer />
+				</div>
+			)
+		}
+	})
+	
+	var Footer=React.createClass({
+		render:function(){
+			return (
+				<h2>应为我们在用代码创造世界</h2>
+			)
+		}
+	})
+	
+	ReactDOM.render( 
+		<MessageBox/>,
+		document.getElementById('app')
+	)
+</script>
