@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			
+		</div>
+	</body>
+</html>
+<script src="bower_components/react/react.js" type="text/javascript" charset="utf-8"></script>
+<script src="bower_components/react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+<script type="text/babel">
+	var MessageBox=React.createClass({
+		//修改状态   messageBox.setState({isVisible:true})
+		//初始化状态
+		getInitialState:function(){
+			return {
+				inputValue:"我是text的内容",
+				selectValue:"A",
+				radioValue:"B",
+				textareaValue:"文字文字",
+				checkValues:[]
+			}
+		},
+		Change:function(e){
+			//这样input的value值才可以改变
+			this.setState({
+				inputValue:e.target.value
+			})
+		},
+		Submit:function(e){
+			e.preventDefault();
+			console.log("heyushuo");
+			console.log(e)
+			console.log(this.refs['goodInput'].value);
+			var formData={
+				input:this.refs.goodInput.value,
+				select:this.refs.goodSelect.value,
+				textarea:this,.refs.goodtextarea.value
+			}
+			console.log(this.refs.goodSelect.value);
+			console.log(formData)
+		},
+		changeRadio:function(e){
+			this.setState({
+				radioValue:e.target.value
+			})
+		},
+		changeCheckbox:function(e){
+			
+		},
+		render:function(){
+//			defaultValue 可以改变值     和value 和 onChange配合使用 不能改变值
+//			radio和checkBox还是用change和value来做
+				return (
+					<form onSubmit={this.Submit}>
+						<input type="text" ref="goodInput" defaultValue={this.state.inputValue} />
+						<br />
+						<select defaultValue="B" ref="goodSelect">
+							<option value="A">A</option>
+							<option value="B">B</option>
+							<option value="C">C</option>
+						</select>
+						<br />
+						<p>单选和多选</p>
+						<input onChange={this.changeRadio} type="radio" name="aa" value="A" />
+						<input onChange={this.changeRadio} type="radio" name="aa" defaultChecked value="B" />
+						<input onChange={this.changeRadio} type="radio" name="aa" value="C" />
+						<br />
+						<input onChange={this.changeCheckbox} type="checkbox" defaultValue="" />
+						<input onChange={this.changeCheckbox} type="checkbox" defaultValue="" />
+						<input onChange={this.changeCheckbox} type="checkbox" defaultValue="" />
+						<br />
+						<p>文本输入</p>
+						<textarea  defaultValue="哈哈哈哈" ref="goodtextarea" />
+						
+						<button type="submit">点击发送</button>
+					</form>
+				)
+			}
+	});
+	
+		var messageBox=	ReactDOM.render( 
+				<MessageBox/>,
+				document.getElementById('app')
+			)
+</script>
