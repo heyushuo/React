@@ -1,9 +1,86 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<title></title>
+		<meta charset="utf-8" />
+		<title>组件新建周期</title>
 	</head>
 	<body>
+		<div id="app">
+			
+		</div>
 	</body>
 </html>
+<script src="bower_components/react/react.js" type="text/javascript" charset="utf-8"></script>
+<script src="bower_components/react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+<script type="text/babel">
+	var MessageBox=React.createClass({
+		
+		/**
+		 * props:父组件向子组件传值
+		 */
+		
+		//修改状态   messageBox.setState({isVisible:true})
+		//初始化状态
+		getInitialState:function(){
+			return {
+				isVisible:true,
+				titleMessage:"你好世界(我是state)",
+				submessages:[
+					"你好我是",
+					"大家好才是真的好",
+					"every Boday"
+				]
+			}
+		},
+		render:function(){
+			return (
+				<div>
+					<h1>{this.state.titleMessage}</h1>
+					//子组件可以接收到message这个对象
+					<Submessage message={this.state.submessages} />
+				</div>
+			)
+		}
+	})
+	
+	var Submessage=React.createClass({
+		//验证父组件传过来的值的类型
+		propsType:{
+			message:React.PropTypes.array.isRequired,
+		},
+		//传过来的值一个默认一个值,防止forEach报错
+		getDefaultProps:function(){
+			return {
+				message:[""]
+			}
+		},
+		render:function(){
+			var msg=[];
+			console.log(this.props.message)
+			this.props.message.forEach(function(ele,index){
+				msg.push(<p key={index}>hehe:{ele}</p>)
+			});
+			
+			return (
+				<div>
+					<h3>写代码很有意思</h3>
+					<div>{msg}</div>
+				</div>
+			)
+		}
+	})
+	
+	var Footer=React.createClass({
+		render:function(){
+			return (
+				<h2>应为我们在用代码创造世界</h2>
+			)
+		}
+	})
+	//返回一个全局的对象,state也在里边    messageBox.setState({isVisible:true})//通过这种方式来修改state
+var messageBox=	ReactDOM.render( 
+		<MessageBox/>,
+		document.getElementById('app')
+	)
+</script>
