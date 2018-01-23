@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>组合组件</title>
+	</head>
+	<body>
+		<div id="app">
+			
+		</div>
+	</body>
+</html>
+<script src="bower_components/react/react.js" type="text/javascript" charset="utf-8"></script>
+<script src="bower_components/react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+<script type="text/babel">
+    function Comment(props) {
+        return (
+				<div className="Comment">
+					<div className="UserInfo">
+						<img className="Avatar"
+							 src={props.author.avatarUrl}
+							 alt={props.author.name}
+						/>
+						<div className="UserInfo-name">
+                            {props.author.name}
+						</div>
+					</div>
+					<div className="Comment-text">
+                        {props.text}
+					</div>
+					<div className="Comment-date">
+                        {formatDate(props.date)}
+					</div>
+				</div>
+        );
+    }
+   // 这个组件接收author(对象)、text(字符串)、以及date(Date对象)作为props,
+	function Avatar(props) {
+		return (
+				<img className="Avatar"
+					 src={props.user.avatarUrl}
+					 alt={props.user.name}
+				/>
+		)
+    }
+    //comment组件可以改为如下
+    function Comment(props) {
+        return (
+				<div className="Comment">
+					<div className="UserInfo">
+						<Avatar user={props.author} />
+						<div className="UserInfo-name">
+                            {props.author.name}
+						</div>
+					</div>
+					<div className="Comment-text">
+                        {props.text}
+					</div>
+					<div className="Comment-date">
+                        {formatDate(props.date)}
+					</div>
+				</div>
+        );
+    }
+    //接下里，我们要提取一个UserInfo组件，用来渲染Avatar旁边的用户名：
+    function UserInfo(props) {
+        return (
+				<div className="UserInfo">
+					<Avatar user={props.user} />
+					<div className="UserInfo-name">
+                        {props.user.name}
+					</div>
+				</div>
+        );
+    }
+    //comment组件可以改为如下
+    function Comment(props) {
+        return (
+				<div className="Comment">
+					<UserInfo user={props.author} />
+					<div className="Comment-text">
+                        {props.text}
+					</div>
+					<div className="Comment-date">
+                        {formatDate(props.date)}
+					</div>
+				</div>
+        );
+    }
+	ReactDOM.render(
+        <App />,
+		document.getElementById('app')
+	)
+</script>

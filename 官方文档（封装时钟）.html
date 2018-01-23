@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>组合组件</title>
+	</head>
+	<body>
+		<div id="app">
+			
+		</div>
+	</body>
+</html>
+<script src="bower_components/react/react.js" type="text/javascript" charset="utf-8"></script>
+<script src="bower_components/react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+<script type="text/babel">
+   /* 将函数转换为类
+    你可以通过5个步骤将函数组件 Clock 转换为类
+    创建一个名称扩展为 React.Component 的ES6 类
+    创建一个叫做render()的空方法
+    将函数体移动到 render() 方法中
+    在 render() 方法中，使用 this.props 替换 props
+    删除剩余的空函数声明*/
+   class Clock extends React.Component {
+       //类组件应始终使用props调用基础构造函数。
+       constructor(props) {
+           super(props);
+           //state必须是一个对象
+           this.state= {
+               date:new Date()
+		   };
+	   }
+		//两个生命周期
+       componentDidMount() {
+        	this.timeId= setInterval(() => this.tick()
+        	  ,1000)
+       }
+
+       componentWillUnmount() {
+			clearInterval(this.timeId)
+       }
+       tick(){
+           this.setState({
+			   date: new Date()
+		   });
+	   }
+       render(){
+           return (
+			   <div>
+				   <h1>Hello, world!</h1>
+				   <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+			   </div>
+		   )
+   		}
+   }
+	ReactDOM.render(
+        <Clock />,
+		document.getElementById('app')
+	)
+</script>
