@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			
+		</div>
+	</body>
+</html>
+<script src="bower_components/react/react.js" type="text/javascript" charset="utf-8"></script>
+<script src="bower_components/react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+<script type="text/babel">
+	function Welcome(props){
+		return (
+			<h1>hello,{props.name}</h1>
+		)
+	}
+
+	function App() {
+		return (
+		    <div>
+				<Welcome name="heyushuo" />
+				<Welcome name="youguoen" />
+				<Welcome name="guorui" />
+			</div>
+		)
+    }
+	
+	ReactDOM.render(
+        <App />,
+		document.getElementById('app')
+	)
+</script>
