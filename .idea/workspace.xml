@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba0c425a-00d7-4bb7-8944-0560518242f1" name="Default" comment="new">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/官方文档（Keys提取组件）.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/官方文档（兄弟元素key唯一，不同数组时可以一样）.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/官方文档（列表 &amp; Keys）.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/官方文档（表单）.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -62,11 +60,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="官方文档（兄弟元素key唯一，不同数组时可以一样）.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="官方文档（兄弟元素key唯一，不同数组时可以一样）.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/官方文档（兄弟元素key唯一，不同数组时可以一样）.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="482">
               <caret line="33" column="25" lean-forward="false" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="官方文档（表单）.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/官方文档（表单）.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-68">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -90,6 +98,7 @@
         <option value="$PROJECT_DIR$/官方文档（列表 &amp; Keys）.html" />
         <option value="$PROJECT_DIR$/官方文档（兄弟元素key唯一，不同数组时可以一样）.html" />
         <option value="$PROJECT_DIR$/官方文档（Keys提取组件）.html" />
+        <option value="$PROJECT_DIR$/官方文档（表单）.html" />
       </list>
     </option>
   </component>
@@ -107,7 +116,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="24" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="768" />
     <option name="height" value="699" />
   </component>
@@ -182,7 +192,7 @@
       <workItem from="1516699474240" duration="1099000" />
       <workItem from="1516711694707" duration="6769000" />
       <workItem from="1516763762429" duration="40000" />
-      <workItem from="1516786270799" duration="4399000" />
+      <workItem from="1516786270799" duration="5665000" />
     </task>
     <task id="LOCAL-00001" summary="new">
       <created>1516700209495</created>
@@ -202,13 +212,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12594000" />
+    <option name="totallyTimeSpent" value="13860000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22916667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15252976" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294893" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -393,6 +403,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="482">
           <caret line="33" column="25" lean-forward="false" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/官方文档（表单）.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
