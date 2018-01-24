@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>列表和keys</title>
+	</head>
+	<body>
+		<div id="app">
+			
+		</div>
+	</body>
+</html>
+<script src="bower_components/react/react.js" type="text/javascript" charset="utf-8"></script>
+<script src="bower_components/react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+<script type="text/babel">
+
+
+	function ListItem(props) {
+		const value=props.value;
+		return (
+				<li>
+					{value}
+				</li>
+		)
+    }
+	//接受一个参数
+	function App(props){
+	    const numbers=props.numbers;
+	    const listItem=numbers.map((numbers)=>
+			<ListItem key={numbers.toString()} value={numbers} />
+		)
+		    return (
+		        <ul>
+					{listItem}
+				</ul>
+			)
+	}
+
+	const numbers=[1,2,3,5,6,9,10];
+	ReactDOM.render(
+        <App numbers={numbers} />,
+		document.getElementById('app')
+	)
+
+	/*这么做有时可以使你的代码更清晰，但有时这种风格也会被滥用。就像在JavaScript中一样，
+	何时需要为了可读性提取出一个变量，这完全取决于你。但请记住，
+	如果一个map()嵌套了太多层级，那可能就是你提取出组件的一个好时机。*/
+</script>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>列表和keys</title>
+	</head>
+	<body>
+		<div id="app">
+			
+		</div>
+	</body>
+</html>
+<script src="bower_components/react/react.js" type="text/javascript" charset="utf-8"></script>
+<script src="bower_components/react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+<script type="text/babel">
+
+	//接受一个参数
+	function App(props){
+	    const numbers=props.list;
+	    const listItem1=(
+	        <ul>
+				{
+				    //吧list放到元素里边，所以需要用{ }这个括号包起来
+                    numbers.map((list)=>
+						<li key= {list.id.toString()} >
+							{list.name}
+						</li>
+                    )
+				}
+			</ul>
+		)
+
+        const listItem2=(
+			numbers.map((user)=>
+				<div key={user.id.toString()}>
+					<h1>{user.name}</h1>
+				</div>
+			)
+        )
+
+		return (
+		    <div>
+				{listItem1}
+				<br/>
+				{listItem2}
+			</div>
+		)
+	}
+
+	const numbers=[
+		{"id":1,"name":"heyushuo"},
+        {"id":2,"name":"youguoen"},
+	];
+	ReactDOM.render(
+        <App list={numbers} />,
+		document.getElementById('app')
+	)
+</script>
