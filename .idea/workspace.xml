@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba0c425a-00d7-4bb7-8944-0560518242f1" name="Default" comment="new">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/官方文档（组合 vs 继承）.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/官方文档（React的理念）.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -30,11 +30,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="官方文档（组合 vs 继承）.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="官方文档（组合 vs 继承）.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/官方文档（组合 vs 继承）.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
               <caret line="42" column="23" lean-forward="false" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="官方文档（React的理念）.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/官方文档（React的理念）.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="387">
+              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -62,6 +72,7 @@
         <option value="$PROJECT_DIR$/官方文档（状态提升）.html" />
         <option value="$PROJECT_DIR$/官方文档（状态提升2）.html" />
         <option value="$PROJECT_DIR$/官方文档（组合 vs 继承）.html" />
+        <option value="$PROJECT_DIR$/官方文档（React的理念）.html" />
       </list>
     </option>
   </component>
@@ -78,10 +89,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="350" />
-    <option name="y" value="32" />
-    <option name="width" value="959" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="149" />
+    <option name="y" value="22" />
+    <option name="width" value="1142" />
     <option name="height" value="699" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -155,7 +166,7 @@
       <workItem from="1516699474240" duration="1099000" />
       <workItem from="1516711694707" duration="6769000" />
       <workItem from="1516763762429" duration="40000" />
-      <workItem from="1516786270799" duration="15812000" />
+      <workItem from="1516786270799" duration="17652000" />
     </task>
     <task id="LOCAL-00001" summary="new">
       <created>1516700209495</created>
@@ -175,10 +186,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24007000" />
+    <option name="totallyTimeSpent" value="25847000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="350" y="32" width="959" height="699" extended-state="0" />
+    <frame x="149" y="22" width="1142" height="699" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37785017" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -403,6 +414,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="42" column="23" lean-forward="false" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/官方文档（React的理念）.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
       </provider>
