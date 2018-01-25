@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>官方文档</title>
+	</head>
+	<body>
+		<div id="app">
+			
+		</div>
+	</body>
+</html>
+<script src="bower_components/react/react.js" type="text/javascript" charset="utf-8"></script>
+<script src="bower_components/react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+<script type="text/babel">
+
+	
+	function Judge(props) {
+		if (props.celsius>=100){
+			return <p>水会烧开</p>
+		}else{
+			return <p>水不会烧开</p>
+		}
+	}
+	
+	class Calculator extends React.Component {
+		constructor(props){
+			super(props);
+			this.state={temperature:''};
+
+			this.handleChange = this.handleChange.bind(this);
+		}
+
+		handleChange(e){
+			this.setState({
+				temperature:e.target.value
+			})
+		}
+
+
+		render() {
+			const temperatura=this.state.temperature;
+			return (
+				<fieldset>
+					<legend>请输入一个摄氏度</legend>
+					<input type="text" value={temperatura} onChange={this.handleChange} />
+					<Judge celsius={temperatura} />
+				</fieldset>
+			)
+		}
+
+	}
+	
+	ReactDOM.render(
+        <Calculator />,
+		document.getElementById('app')
+	)
+</script>

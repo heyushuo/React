@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>官方文档</title>
+	</head>
+	<body>
+		<div id="app">
+			
+		</div>
+	</body>
+</html>
+<script src="bower_components/react/react.js" type="text/javascript" charset="utf-8"></script>
+<script src="bower_components/react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+<script type="text/babel">
+
+	
+	function Judge(props) {
+		if (props.celsius>=100){
+			return <p>水会烧开</p>
+		}else{
+			return <p>水不会烧开</p>
+		}
+	}
+	/*我们可以通过从 Calculator 组件中抽离一个 TemperatureInput 组件出来。
+	我们也会给它添加一个值为 c 或 f 的表示温度单位的 scale 属性。*/
+	const scaleName = {
+		c:'Celsius',
+		f:'Fahrenheit'
+	}
+//	写两个可以将摄氏度和华氏度互相转换的函数。
+	function toCelsius(fahrenheit) {
+		return (fahrenheit - 32) * 5 / 9;
+	}
+
+	function toFahrenheit(celsius) {
+		return (celsius * 9 / 5) + 32;
+	}
+
+	function tryConvert(temperature, convert) {
+		const input = parseFloat(temperature);
+		if (Number.isNaN(input)) {
+			return '';
+		}
+		const output = convert(input);
+		const rounded = Math.round(output * 1000) / 1000;
+		return rounded.toString();
+	}
+//	我们想要的是这两个输入能保持同步。当我们更新摄氏输入（Celsius）时，华氏度（Fahrenheit ）
+//	这个框应该能显示转换后的的温度数值，反之亦然。
+//	在React中，状态分享是通过将state数据提升至离需要这些数据的组件最近的父组件来完成的。这就是所谓的状态提升
+	/*我们会将 TemperatureInput 组件自身保存的 state 移到 Calculator 中。*/
+	class TemperatureInput extends React.Component {
+		constructor(props){
+			super(props);
+			//this.state={temperature:''};
+
+			this.handleChange = this.handleChange.bind(this);
+		}
+
+		handleChange(e){
+			/*this.setState({
+				temperature:e.target.value
+			})*/
+			this.props.onTemperatureChange(e.target.value);
+		}
+
+
+		render() {
+			const temperatura=this.props.temperature;
+			const scale=this.props.scale;
+			return (
+				<fieldset>
+					<legend>请输入一个 { scaleName[scale]} </legend>
+					<input type="text" value={temperatura} onChange={this.handleChange} />
+				</fieldset>
+			)
+		}
+
+	}
+
+	class Calculator extends React.Component{
+		constructor(props){
+			super(props);
+			this.hadleCelsiudChange=this.handleCelsiusChange.bind(this);
+			this.handleFahrenheitChange = this.handleFahrenheitChange.bind(this);
+			this.state={
+				temperature:'',
+				scale:'c'
+			}
+		}
+		handleCelsiusChange(temperature) {
+			this.setState({scale: 'c', temperature});
+		}
+
+		handleFahrenheitChange(temperature) {
+			this.setState({scale: 'f', temperature});
+		}
+		render() {
+			const scale =this.state.scale;
+			const temperature =this.state.temperature;
+			const celsius = scale === 'f' ? tryConvert(temperature, toCelsius) : temperature;
+			const fahrenheit = scale === 'c' ? tryConvert(temperature, toFahrenheit) : temperature;
+			return (
+				<div>
+					<TemperatureInput scale="c" temperature={celsius} onTemperatureChange={this.hadleCelsiudChange} />
+					<TemperatureInput scale="f" temperature={fahrenheit} onTemperatureChange={this.handleFahrenheightChange} />
+					<Judge celsius={parseFloat(celsius)}  />
+				</div>
+			)
+		}
+	}
+
+	ReactDOM.render(
+        <Calculator />,
+		document.getElementById('app')
+	)
+</script>
