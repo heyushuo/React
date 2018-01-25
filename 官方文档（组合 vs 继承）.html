@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>组合组件</title>
+		<style>
+			.box{
+				width: 100%;
+				height:100%;
+				height:200px;
+				clear: both;
+			}
+			div{
+				height:200px;
+			}
+			.left{
+				float: left;
+				width:20%;
+			}
+			.left .red{
+				background: red;
+			}
+			.right .blue{
+				background: blue;
+			}
+			.right{
+				float: left;
+				width:80%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			
+		</div>
+	</body>
+</html>
+<script src="bower_components/react/react.js" type="text/javascript" charset="utf-8"></script>
+<script src="bower_components/react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+<script type="text/babel">
+/*	一些组件不能提前知道它们的子组件是什么。这对于 Sidebar 或 Dialog 这类通用容器尤其常见。
+	我们建议这些组件使用 children 属性将子元素直接传递到输出。*/
+	function FancyBorder(props) {
+		return (
+			<div className="box">
+				<div className="left">
+					{props.left}
+				</div>
+				<div className="right">
+					{props.right}
+				</div>
+			</div>
+		)
+	}
+
+	function Left() {
+		return (
+			<div className="red">21212</div>
+		)
+	}
+	function Right() {
+		return (
+			<div className="blue">sdffasf</div>
+		)
+	}
+	function Dialog() {
+		return (
+			<FancyBorder left={<Left />} right={<Right />} />
+
+
+
+		)
+	}
+/*<FancyBorder> JSX 标签内的任何内容都将通过 children 属性传入 FancyBorder。
+	由于 FancyBorder 在一个 <div> 内渲染了 {props.children}，所以被传递的所有元素都会出现在最终输出中。*/
+	ReactDOM.render(
+        <Dialog />,
+		document.getElementById('app')
+	)
+</script>
